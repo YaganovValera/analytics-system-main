@@ -1,0 +1,16 @@
+.csv-uploader {
+    margin-bottom: 1rem;
+}
+
+.csv-uploader input[type='file'] {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #f8f8f8;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.csv-uploader input[type='file']:hover {
+    background: #f0f0f0;
+}

@@ -1,0 +1,108 @@
+syntax = "proto3";
+
+package market.marketdata.v1;
+option go_package = "github.com/YaganovValera/analytics-system/proto/gen/go/v1/marketdata;marketdatapb";
+
+import "google/protobuf/timestamp.proto";
+import "google/rpc/status.proto";
+import "v1/common/common.proto";
+
+// Market trade data point.
+message MarketData {
+  google.protobuf.Timestamp timestamp = 1;
+  string symbol = 2;
+  double price = 3;
+  double bid_price = 4;
+  double ask_price = 5;
+  double volume = 6;
+  string trade_id = 7;
+}
+
+// Price level within an order book.
+message OrderBookLevel {
+  double price = 1;
+  double quantity = 2;
+}
+
+// Snapshot of the order book at a specific point in time.
+message OrderBookSnapshot {
+  google.protobuf.Timestamp timestamp = 1;
+  string symbol = 2;
+  repeated OrderBookLevel bids = 3;
+  repeated OrderBookLevel asks = 4;
+}
+
+// Filter to subscribe or query market data for a specific symbol.
+message MarketDataFilter {
+  string symbol = 1;
+  market.common.v1.RequestMetadata metadata = 2;
+}
+
+// Streamed response for trade data.
+message MarketDataEvent {
+  oneof payload {
+    MarketData data = 1;
+    google.rpc.Status error = 2;
+  }
+}
+
+// Streamed response for order book updates.
+message OrderBookEvent {
+  oneof payload {
+    OrderBookSnapshot data = 1;
+    google.rpc.Status error = 2;
+  }
+}
+
+// Request to retrieve historical market trade data.
+message GetMarketDataRequest {
+  string symbol = 1;
+  google.protobuf.Timestamp start = 2;
+  google.protobuf.Timestamp end = 3;
+  market.common.v1.Pagination pagination = 4;
+  market.common.v1.RequestMetadata metadata = 5;
+}
+
+// Response with paginated historical trade data.
+message GetMarketDataResponse {
+  repeated MarketData data = 1;
+  string next_page_token = 2;
+}
+
+// Request to retrieve historical order book snapshots.
+message GetOrderBookRequest {
+  string symbol = 1;
+  google.protobuf.Timestamp start = 2;
+  google.protobuf.Timestamp end = 3;
+  market.common.v1.Pagination pagination = 4;
+  market.common.v1.RequestMetadata metadata = 5;
+}
+
+// Response with paginated order book snapshots.
+message GetOrderBookResponse {
+  repeated OrderBookSnapshot snapshots = 1;
+  string next_page_token = 2;
+  OrderBookAnalysis analysis = 3; 
+}
+
+message OrderBookAnalysis {
+  double avg_spread_percent = 1;
+  double avg_bid_volume_top10 = 2;
+  double avg_ask_volume_top10 = 3;
+  double imbalance_start = 4;
+  double imbalance_end = 5;
+  double bid_slope = 6;
+  double ask_slope = 7;
+  double max_bid_wall_price = 8;
+  double max_bid_wall_volume = 9;
+  double max_ask_wall_price = 10;
+  double max_ask_wall_volume = 11;
+}
+
+
+service MarketDataService {
+  rpc StreamMarketData(MarketDataFilter) returns (stream MarketDataEvent);
+  rpc StreamOrderBook(MarketDataFilter) returns (stream OrderBookEvent);
+  rpc GetMarketData(GetMarketDataRequest) returns (GetMarketDataResponse);
+  rpc GetOrderBook(GetOrderBookRequest) returns (GetOrderBookResponse);
+}

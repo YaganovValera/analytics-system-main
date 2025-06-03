@@ -1,0 +1,69 @@
+/* src/components/CandleForm.css */
+
+.candle-form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .candle-form {
+    min-width: 250px;
+    max-width: 300px;
+    background: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .candle-form h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+  }
+  
+  .form-input,
+  .form-select {
+    padding: 0.4rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .form-error {
+    color: red;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+  }
+  
+  button[type="submit"] {
+    padding: 0.5rem 1rem;
+    background-color: #0077cc;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  button[type="submit"]:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+  }
+  

@@ -1,0 +1,42 @@
+# monitoring/otel/otel-collector-config.yaml
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317  # gRPC входящие трейсы
+      http:
+        endpoint: 0.0.0.0:4318  # HTTP входящие трейсы
+
+processors:
+  batch:
+    timeout: 5s
+    send_batch_size: 512
+
+  memory_limiter:
+    check_interval: 2s
+    limit_mib: 512
+    spike_limit_mib: 50
+
+extensions:
+  health_check:
+    endpoint: "0.0.0.0:13133"
+    path: "/healthz"
+
+exporters:
+  debug: {}
+  zipkin:
+    endpoint: "http://jaeger:9411/api/v2/spans"
+    sending_queue:
+      enabled: true
+      num_consumers: 2
+      queue_size: 2048
+
+
+service:
+  extensions: [health_check]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [memory_limiter, batch]
+      exporters: [debug, zipkin]
+

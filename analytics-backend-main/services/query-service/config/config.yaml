@@ -1,0 +1,21 @@
+# query-service/config/config
+service_name: "query-service"
+service_version: "v1.0.0"
+
+logging:
+  level: "debug"
+  dev_mode: false
+
+
+http:
+  port: 8087
+  read_timeout: "10s"
+  write_timeout: "15s"
+  idle_timeout: "60s"
+  shutdown_timeout: "5s"
+  metrics_path: "/metrics"
+  healthz_path: "/healthz"
+  readyz_path: "/readyz"
+
+timescaledb:
+  dsn: "postgres://user:pass@timescaledb:5432/analytics?sslmode=disable"

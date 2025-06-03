@@ -1,0 +1,47 @@
+.orderbook-layout {
+    display: flex;
+    gap: 24px;
+    padding: 24px;
+    align-items: flex-start;
+  }
+  
+  .orderbook-content {
+    flex: 1;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .orderbook-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+  }
+  
+  .orderbook-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .orderbook-pagination button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .orderbook-pagination button:disabled {
+    background-color: #ced4da;
+    cursor: not-allowed;
+  }
+  
+  .orderbook-pagination button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  

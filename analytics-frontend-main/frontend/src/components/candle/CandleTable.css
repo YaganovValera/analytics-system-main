@@ -1,0 +1,59 @@
+/* src/components/CandleTable.css */
+
+.candle-table-wrapper {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+  
+  .candle-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  
+  .candle-table th,
+  .candle-table td {
+    padding: 8px 12px;
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .candle-table th {
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+  }
+  
+  .row-up {
+    background-color: #e8f9e5;
+    color: #155724;
+  }
+  
+  .row-down {
+    background-color: #fcebea;
+    color: #721c24;
+  }
+  
+  .row-neutral {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .row-max {
+    border-top: 2px solid #28a745;
+    border-bottom: 2px solid #28a745;
+    font-weight: bold;
+  }
+  
+  .row-min {
+    border-top: 2px solid #dc3545;
+    border-bottom: 2px solid #dc3545;
+    font-weight: bold;
+  }
+  
+  .candle-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  

@@ -1,0 +1,35 @@
+# infra/monitoring/prometheus.yml
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'market-data-collector'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['market-data-collector:8086']
+
+  - job_name: 'preprocessor'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['preprocessor:8081']
+
+  - job_name: 'analytics-api'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['analytics-api:8082']
+
+  - job_name: 'auth'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['auth:8084']
+
+  - job_name: 'query-service'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['query-service:8087']

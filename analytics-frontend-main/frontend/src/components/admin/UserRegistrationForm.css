@@ -1,0 +1,84 @@
+.user-registration-form {
+    max-width: 400px;
+    background-color: #f7f9fc;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    font-family: sans-serif;
+  }
+  
+  .user-registration-form h3 {
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+    color: #333;
+  }
+  
+  .user-registration-form .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .user-registration-form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .user-registration-form input[type="text"],
+  .user-registration-form input[type="password"] {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: border 0.2s ease;
+    font-size: 0.95rem;
+  }
+  
+  .user-registration-form input[type="text"]:focus,
+  .user-registration-form input[type="password"]:focus {
+    border-color: #4a90e2;
+    outline: none;
+  }
+  
+  .user-registration-form .roles {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .user-registration-form .roles label {
+    font-weight: 400;
+  }
+  
+  .user-registration-form button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .user-registration-form button:disabled {
+    background-color: #a0c3eb;
+    cursor: not-allowed;
+  }
+  
+  .user-registration-form button:hover:not(:disabled) {
+    background-color: #357abd;
+  }
+  
+  .user-registration-form p {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .user-registration-form p[style*="color: red"] {
+    background-color: #ffe6e6;
+    border: 1px solid #ffb2b2;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+  }
+  

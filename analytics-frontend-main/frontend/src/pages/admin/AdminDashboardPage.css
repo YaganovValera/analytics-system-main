@@ -1,0 +1,59 @@
+.admin-dashboard {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    font-family: sans-serif;
+  }
+  
+  .admin-dashboard h2 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+  }
+  
+  .admin-dashboard button {
+    padding: 0.5rem 1rem;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .admin-dashboard button:disabled {
+    background-color: #a0c3eb;
+    cursor: not-allowed;
+  }
+  
+  .admin-dashboard button:hover:not(:disabled) {
+    background-color: #357abd;
+  }
+  
+  .admin-dashboard .pagination-controls {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  
+  .admin-dashboard p {
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
+  }
+  
+  .admin-dashboard p[style*="red"] {
+    background-color: #ffe6e6;
+    border: 1px solid #ffb2b2;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    text-align: center;
+    color: #c00;
+  }
+  

@@ -1,0 +1,26 @@
+.orderbook-summary {
+    margin-top: 32px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    font-size: 14px;
+    color: #212529;
+  }
+  
+  .orderbook-summary h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #343a40;
+  }
+  
+  .orderbook-summary p {
+    margin: 8px 0;
+    line-height: 1.5;
+  }
+  
+  .orderbook-summary strong {
+    color: #495057;
+  }
+  

@@ -1,0 +1,38 @@
+/* src/pages/OfflineAnalysisPage.css */
+
+.grid-two-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.grid-two-cols > * {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.body-wick-summary {
+    background-color: #f1f3f5;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.body-wick-summary h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #2e7d32;
+}
+
+.body-wick-summary p {
+    margin-bottom: 0.75rem;
+}
+
+

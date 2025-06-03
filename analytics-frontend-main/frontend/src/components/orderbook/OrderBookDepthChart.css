@@ -1,0 +1,27 @@
+.depth-chart {
+    margin-top: 32px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .depth-chart-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  
+  .depth-chart-header h3 {
+    font-size: 18px;
+    color: #212529;
+    margin: 0;
+  }
+  
+  .depth-chart-header p {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0;
+  }

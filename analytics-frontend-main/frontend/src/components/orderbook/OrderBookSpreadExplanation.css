@@ -1,0 +1,24 @@
+.spread-explanation {
+    background-color: #f9f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    color: #333;
+  }
+  
+  .spread-explanation h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #2e7d32;
+    text-align: center;
+  }
+  
+  .spread-explanation p {
+    margin-bottom: 0.75rem;
+    text-align: justify;
+  }
+  

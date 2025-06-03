@@ -1,0 +1,32 @@
+.orderbook-animator-explanation {
+    margin-top: 24px;
+    padding: 20px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #333;
+  }
+  
+  .orderbook-animator-explanation h3 {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+  
+  .orderbook-animator-explanation h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #495057;
+  }
+  
+  .orderbook-animator-explanation ul {
+    padding-left: 20px;
+    margin-top: 0;
+  }
+  
+  .orderbook-animator-explanation li {
+    margin-bottom: 6px;
+  }
+  

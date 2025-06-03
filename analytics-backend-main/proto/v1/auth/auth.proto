@@ -1,0 +1,132 @@
+// proto/v1/auth/auth.proto
+syntax = "proto3";
+
+package market.auth.v1;
+option go_package = "github.com/YaganovValera/analytics-system/proto/gen/go/v1/auth;authpb";
+
+import "google/protobuf/timestamp.proto";
+import "v1/common/common.proto";
+
+// Request for user login with credentials.
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+  market.common.v1.RequestMetadata metadata = 3;
+}
+
+// Response with access and refresh tokens.
+message LoginResponse {
+  string access_token = 1;
+  string refresh_token = 2;
+  int64 expires_in = 3; // In seconds
+}
+
+// Request to validate a token.
+message ValidateTokenRequest {
+  string token = 1;
+}
+
+// Response with token validation details.
+message ValidateTokenResponse {
+  bool valid = 1;
+  string username = 2;
+  repeated string roles = 3;
+  google.protobuf.Timestamp expires_at = 4;
+  market.common.v1.RequestMetadata metadata = 5; 
+}
+
+// Request to refresh access token using refresh token.
+message RefreshTokenRequest {
+  string refresh_token = 1;
+}
+
+// Response with refreshed tokens.
+message RefreshTokenResponse {
+  string access_token = 1;
+  string refresh_token = 2;
+  int64 expires_in = 3;
+}
+
+// Enum describing token type to revoke.
+enum TokenType {
+  TOKEN_TYPE_UNSPECIFIED = 0;
+  ACCESS = 1;
+  REFRESH = 2;
+}
+
+// Request to revoke a specific token.
+message RevokeTokenRequest {
+  string token = 1;
+  TokenType type = 2;
+}
+
+// Response confirming revocation.
+message RevokeTokenResponse {
+  bool revoked = 1;
+}
+
+message LogoutRequest {
+  string refresh_token = 1;
+}
+message LogoutResponse {
+  bool success = 1;
+}
+
+message RegisterRequest {
+  string username = 1;
+  string password = 2;
+  repeated string roles = 3;
+  market.common.v1.RequestMetadata metadata = 4;
+}
+
+message RegisterResponse {
+  string access_token = 1;
+  string refresh_token = 2;
+  int64 expires_in = 3;
+}
+
+message ListUsersRequest {
+  market.common.v1.Pagination pagination = 1;
+}
+
+message ListUsersResponse {
+  repeated UserInfo users = 1;
+  string next_page_token = 2;
+}
+
+message UserInfo {
+  string id = 1;
+  string username = 2;
+  repeated string roles = 3;
+  string created_at = 4;
+}
+
+message UpdateUserRolesRequest {
+  string user_id = 1;
+  repeated string roles = 2;
+}
+
+message UpdateUserRolesResponse {
+  bool success = 1;
+}
+
+message GetUserRequest {
+  string user_id = 1;
+}
+
+message GetUserResponse {
+  UserInfo user = 1;
+}
+
+service AuthService {
+  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
+  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
+  rpc Logout(LogoutRequest) returns (LogoutResponse);
+  rpc RevokeToken(RevokeTokenRequest) returns (RevokeTokenResponse);
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
+  rpc UpdateUserRoles(UpdateUserRolesRequest) returns (UpdateUserRolesResponse);
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+}

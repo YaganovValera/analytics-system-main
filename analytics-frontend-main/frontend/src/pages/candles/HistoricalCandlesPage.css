@@ -1,0 +1,71 @@
+/* src/pages/candles/HistoricalCandlesPage.css */
+
+.candles-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.candles-main {
+flex: 2;
+min-width: 0;
+}
+
+.candles-sidebar {
+flex: 1;
+max-width: 350px;
+}
+
+  
+.summary-box {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.summary-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.5rem;
+}
+
+.summary-item {
+    padding: 0.5rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.summary-item strong {
+    display: block;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+.summary-item span {
+    font-weight: bold;
+    color: #0077cc;
+    font-size: 1rem;
+}
+  
+
+.load-more-button {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+  
+
+.table-wrapper {
+    margin-bottom: 3rem;
+}
+  

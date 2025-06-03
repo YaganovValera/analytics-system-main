@@ -1,0 +1,47 @@
+.orderbook-table {
+    margin-top: 32px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+  }
+  
+  .orderbook-table-header {
+    margin-bottom: 12px;
+  }
+  
+  .orderbook-table-header h3 {
+    font-size: 18px;
+    margin: 0;
+    color: #212529;
+  }
+  
+  .orderbook-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  .orderbook-table th,
+  .orderbook-table td {
+    text-align: center;
+    padding: 8px 4px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .orderbook-table th {
+    background-color: #f1f3f5;
+    font-weight: 600;
+    color: #495057;
+  }
+  
+  .bid {
+    color: #007bff;
+  }
+  
+  .ask {
+    color: #dc3545;
+  }
+  
