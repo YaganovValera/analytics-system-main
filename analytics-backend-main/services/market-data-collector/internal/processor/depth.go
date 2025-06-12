@@ -128,10 +128,10 @@ func (dp *depthProcessor) Process(ctx context.Context, raw binance.RawMessage) e
 
 	metrics.PublishLatency.Observe(time.Since(start).Seconds())
 
-	// dp.log.WithContext(ctx).Debug("depth published",
-	// 	zap.String("symbol", evt.Symbol),
-	// 	zap.Int("bids", len(bids)),
-	// 	zap.Int("asks", len(asks)),
-	// )
+	dp.log.WithContext(ctx).Debug("depth published",
+		zap.String("symbol", evt.Symbol),
+		zap.Int("bids", len(bids)),
+		zap.Int("asks", len(asks)),
+	)
 	return nil
 }

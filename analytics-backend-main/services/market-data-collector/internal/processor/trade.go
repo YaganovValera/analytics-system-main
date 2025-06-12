@@ -112,11 +112,11 @@ func (tp *tradeProcessor) Process(ctx context.Context, raw binance.RawMessage) e
 
 	metrics.PublishLatency.Observe(time.Since(start).Seconds())
 
-	// tp.log.WithContext(ctx).Debug("trade published",
-	// 	zap.String("symbol", evt.Symbol),
-	// 	zap.Float64("price", price),
-	// 	zap.Float64("qty", qty),
-	// 	zap.String("trade_id", msg.TradeId),
-	// )
+	tp.log.WithContext(ctx).Debug("trade published",
+		zap.String("symbol", evt.Symbol),
+		zap.Float64("price", price),
+		zap.Float64("qty", qty),
+		zap.String("trade_id", msg.TradeId),
+	)
 	return nil
 }
